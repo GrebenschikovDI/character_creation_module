@@ -1,3 +1,5 @@
+"""Main module for character creation and learning how to play."""
+
 from random import randint
 
 # Новый импорт.
@@ -7,6 +9,7 @@ from graphic_arts.start_game_banner import run_screensaver
 
 
 def attack(char_name: str, char_class: str) -> str:
+    """Attack function based on character type."""
     if char_class == 'warrior':
         base_attack_warrior: int = 5 + randint(3, 5)
         return (f'{char_name} нанёс урон противнику равный '
@@ -22,6 +25,7 @@ def attack(char_name: str, char_class: str) -> str:
 
 
 def defence(char_name: str, char_class: str) -> str:
+    """Block function based on character type."""
     if char_class == 'warrior':
         base_block_warrior: int = 10 + randint(5, 10)
         return (f'{char_name} блокировал '
@@ -37,6 +41,7 @@ def defence(char_name: str, char_class: str) -> str:
 
 
 def special(char_name: str, char_class: str) -> str:
+    """Return special based on character type."""
     if char_class == 'warrior':
         special_warrior: int = 80 + 25
         return (f'{char_name} применил специальное умение «Выносливость '
@@ -52,6 +57,7 @@ def special(char_name: str, char_class: str) -> str:
 
 
 def start_training(char_name: str, char_class: str) -> str:
+    """Training function, teaches how to play."""
     if char_class == 'warrior':
         print(f'{char_name}, '
               f'ты Воитель — отличный боец ближнего боя.')
@@ -80,6 +86,7 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
+    """Character selection function."""
     approve_choice: str = ''
     char_class: str = ''
     while approve_choice != 'y':
